@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Secrets
+.env
+
+# Vector database (generated later, never upload)
+chroma_db/
+
+# Editor / Windows
+.vscode/
+Thumbs.db
