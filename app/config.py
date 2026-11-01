@@ -13,5 +13,9 @@ class Settings(BaseSettings):
     app_name: str = "RAG Docs Assistant"
     app_version: str = "0.1.0"
 
+    docs_dir: str = "data/docs"
+    chunk_size: int = 800
+    chunk_overlap: int = 100
+
 
 settings = Settings()
