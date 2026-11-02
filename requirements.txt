@@ -3,3 +3,5 @@ uvicorn[standard]
 pydantic-settings
 langchain-text-splitters
 pypdf
+langchain-chroma
+langchain-ollama

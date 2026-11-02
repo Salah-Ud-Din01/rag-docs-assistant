@@ -17,5 +17,11 @@ class Settings(BaseSettings):
     chunk_size: int = 800
     chunk_overlap: int = 100
 
+    ollama_base_url: str = "http://localhost:11434"
+    embedding_model: str = "nomic-embed-text"
+    chroma_dir: str = "chroma_db"
+    collection_name: str = "docs"
+    top_k: int = 4
+
 
 settings = Settings()
