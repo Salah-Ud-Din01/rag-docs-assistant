@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     chroma_dir: str = "chroma_db"
     collection_name: str = "docs"
     top_k: int = 4
+    llm_model: str = "llama3.2:3b"
 
 
 settings = Settings()
