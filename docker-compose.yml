@@ -1,0 +1,52 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  ollama-pull:
+    image: ollama/ollama:latest
+    environment:
+      OLLAMA_HOST: ollama:11434
+    entrypoint: ["/bin/sh", "-c", "ollama pull nomic-embed-text && ollama pull llama3.2:3b"]
+    depends_on:
+      ollama:
+        condition: service_healthy
+
+  api:
+    build: .
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      CHROMA_DIR: /app/chroma_db
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./data/docs:/app/data/docs:ro
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    depends_on:
+      ollama-pull:
+        condition: service_completed_successfully
+
+  ui:
+    build: ./ui
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  ollama_models:
+  chroma_data:
