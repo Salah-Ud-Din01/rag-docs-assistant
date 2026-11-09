@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What is RAG?",
+    "expected_document": "rag-intro.md",
+    "expected_section": "What is RAG?",
+    "expected_keywords": ["retrieval", "generation"]
+  },
+  {
+    "question": "Why do language models hallucinate?",
+    "expected_document": "rag-intro.md",
+    "expected_section": "Why use RAG?",
+    "expected_keywords": ["hallucinate", "wrong"]
+  },
+  {
+    "question": "What is an embedding?",
+    "expected_document": "rag-intro.md",
+    "expected_section": "What are embeddings?",
+    "expected_keywords": ["numbers", "meaning"]
+  },
+  {
+    "question": "How do I keep data when a container is removed?",
+    "expected_document": "docker-basics.md",
+    "expected_section": "Volumes",
+    "expected_keywords": ["volume"]
+  },
+  {
+    "question": "What is the difference between an image and a container?",
+    "expected_document": "docker-basics.md",
+    "expected_section": "Images and containers",
+    "expected_keywords": ["template", "instance"]
+  },
+  {
+    "question": "What does docker compose up do?",
+    "expected_document": "docker-basics.md",
+    "expected_section": "Docker Compose",
+    "expected_keywords": ["services"]
+  },
+  {
+    "question": "What is data drift?",
+    "expected_document": "mlops-basics.md",
+    "expected_section": "Model monitoring",
+    "expected_keywords": ["drift", "production"]
+  },
+  {
+    "question": "What makes a machine learning result reproducible?",
+    "expected_document": "mlops-basics.md",
+    "expected_section": "Reproducibility",
+    "expected_keywords": ["same", "version"]
+  }
+]
