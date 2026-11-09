@@ -131,4 +131,4 @@ streamlit run ui/streamlit_app.py        # terminal 2 — UI
 
 ## 👤 Author
 
-**Salah** — MLOps student at Nackademin, Stockholm (2025–2028). Looking for an LIA placement.
+**Salah Ud Din**
